@@ -17,6 +17,7 @@ stages{
       expression{params.ENV == "Dev"}  // condition to be satisfied 
      }
      steps{
+      echo "Dev Environment"
      git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
      sh 'mvn compile'
      }
