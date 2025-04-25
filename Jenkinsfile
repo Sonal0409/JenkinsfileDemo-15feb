@@ -7,7 +7,7 @@ maven 'mymaven'
 }
 
 parameters{
- choice(name: "ENV",choices: ["","Dev","QA"])
+ choice(name: "ENV",choices: ["","Dev","Test"])
 }
 
 stages{
@@ -22,10 +22,10 @@ stages{
      sh 'mvn compile'
      }
    }
-   stage('Build on QA Env')
+   stage('Build on Test Env')
    {
    when{   // keyword for if  
-    expression{params.ENV == "QA"}  // condition to be satisfied 
+    expression{params.ENV == "Test"}  // condition to be satisfied 
    }
    steps{
    git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
